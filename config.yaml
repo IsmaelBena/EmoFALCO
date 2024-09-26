@@ -1,0 +1,63 @@
+paths:
+  real_dataset_root_dir: "datasets/real"
+  fake_dataset_root_dir: "datasets/fake"
+  facial_landmarks_dir: "landmarks"
+  arcface_dir: "arcface_features"
+  full_images_dir: "data_full"
+  inverted_dir: "inv"
+  anonymized_dir: "datasets/anon"
+  fake_nn_map: "landmarks_auto_cosine_nn_map.json"
+
+resize_settings:
+  verbose: true
+  image_size: 256
+  output_directory: "data_resized"
+
+feature_extraction_settings:
+  verbose: true
+  use_cuda: true
+  batch_size: 64
+  landmarks_input: "data_resized"
+
+fake_data_generator_settings:
+  verbose: true
+  use_cuda: trueW
+  data_output_dir: "data"
+  gan_generator: "stylegan2_ffhq1024"
+  truncation: 0.7
+  num_samples: 60000
+
+invert_settings:
+  verbose: true
+  use_cuda: true
+  batch_size: 2
+  save_aligned: true
+  save_reconstructed: true
+
+pair_nn_settings:
+  verbose: true
+  use_cuda: true
+  # algorithms: 'auto', 'ball_tree', 'kd_tree', 'brute', 'all'
+  algorithm: "all"
+  # metrics: 'euclidean', 'cosine', 'all'
+  metrics: "all"
+
+anonymize_settings:
+  verbose: true
+  use_cuda: true
+  # W+ or S
+  latent_space: 'W+'
+  id_loss_margin: 0.0
+  layer_start: 5
+  layer_end: 10
+  # Default 50
+  epochs: 50
+  # adam or sgd
+  optimizer: 'sgd'
+  lr: 0.01
+  lr_milestones: [0.75, 0.9]
+  lr_gamma: 0.8
+  lambda_id: 10.0
+  lambda_lm: 0.1
+  stop_early: true
+  stop_at: 5

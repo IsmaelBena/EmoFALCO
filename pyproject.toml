@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "emofalco"
+version = "0.1.0"
+description = ""
+authors = ["IsmaelBena"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+torch = "1.7.1"
+torchvision = "0.8.2"
+clip = "^0.2.0"
+numpy = "1.18.5"
+scipy = "1.4.1"
+opencv-python = "4.1.1.26"
+tqdm = "^4.66.5"
+scikit-image = "0.16.2"
+kornia = "0.5.0"
+yacs = "0.1.8"
+face-alignment = "^1.4.1"
+pyyaml = "^5.0"
+ninja = "^1.11.1.1"
+pybind11 = "^2.13.6"
+scikit-learn = "^1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
