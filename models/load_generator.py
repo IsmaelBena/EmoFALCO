@@ -10,7 +10,7 @@ def load_generator(model_name, latent_is_w=False, latent_is_s=False, verbose=Fal
                    CHECKPOINT_DIR='models/pretrained/genforce/'):
 
     if verbose:
-        print("  \\__Building generator for model {}...".format(model_name), end="")
+        print("  ╠═══[ Building generator for model {}... ]".format(model_name), end="")
 
     model_config = MODEL_ZOO[model_name].copy()
     url = model_config.pop('url')
@@ -30,7 +30,7 @@ def load_generator(model_name, latent_is_w=False, latent_is_s=False, verbose=Fal
     checkpoint_path = osp.join(CHECKPOINT_DIR, model_name + '.pth')
 
     if verbose:
-        print("  \\__Loading checkpoint from {}...".format(checkpoint_path), end="")
+        print("  ╠═══[ Loading checkpoint from {}...".format(checkpoint_path), end="")
 
     if not osp.exists(checkpoint_path):
         subprocess.call(['wget', '--quiet', '-O', checkpoint_path, url])

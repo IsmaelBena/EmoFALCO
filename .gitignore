@@ -1,3 +1,9 @@
+.directory
+*/.directory
+*~
+.idea/
+*.pyc
+__pycache__/
+*/__pycache__/
+models/pretrained/
 datasets/
-
-models/pretrained

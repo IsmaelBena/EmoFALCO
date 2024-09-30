@@ -5,8 +5,8 @@ paths:
   arcface_dir: "arcface_features"
   full_images_dir: "data_full"
   inverted_dir: "inv"
-  anonymized_dir: "datasets/anon"
-  fake_nn_map: "landmarks_auto_cosine_nn_map.json"
+  anonymized_dir: "datasets/anon_backup/compare_lr"
+  fake_nn_map: "landmarks_brute_cosine_nn_map.json"
 
 resize_settings:
   verbose: true
@@ -21,7 +21,7 @@ feature_extraction_settings:
 
 fake_data_generator_settings:
   verbose: true
-  use_cuda: trueW
+  use_cuda: true
   data_output_dir: "data"
   gan_generator: "stylegan2_ffhq1024"
   truncation: 0.7
@@ -48,16 +48,16 @@ anonymize_settings:
   # W+ or S
   latent_space: 'W+'
   id_loss_margin: 0.0
-  layer_start: 5
-  layer_end: 10
+  layer_start: 9
+  layer_end: 13
   # Default 50
   epochs: 50
   # adam or sgd
-  optimizer: 'sgd'
-  lr: 0.01
+  optimizer: 'adam'
+  lr: 0.025
   lr_milestones: [0.75, 0.9]
   lr_gamma: 0.8
   lambda_id: 10.0
   lambda_lm: 0.1
   stop_early: true
-  stop_at: 5
+  stop_at: 200

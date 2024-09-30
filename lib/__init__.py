@@ -9,3 +9,4 @@ from .latent_code import LatentCode
 from .id_loss import IDLoss
 from .attr_loss import AttrLoss
 from .landmark_loss import LandmarkLoss
+from .evaluation import compare_images, graph_data

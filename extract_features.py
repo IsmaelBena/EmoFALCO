@@ -1,19 +1,12 @@
 import os
 import os.path as osp
 import torch
-import json
 import yaml
-
 from torch.utils import data
 from torchvision import transforms
-
 from lib import DATASETS, CelebAHQ, ArcFace
 from tqdm import tqdm
-
 import face_alignment
-from skimage import io
-
-import multiprocessing as mp
 
 def main():
     # Load Config
@@ -205,5 +198,4 @@ def main():
         print(f"  ╚═══[ ArcFace features saved to: {arcface_features_file} ]")
     
 if __name__ == '__main__':
-    #mp.set_start_method('spawn')
     main()
