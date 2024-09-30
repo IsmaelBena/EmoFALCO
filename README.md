@@ -21,12 +21,13 @@ poetry install
 ```
 
 ### Dataset:
-The CelebA-HQ dataset can be found at: https://drive.google.com/file/d/1badu11NqxGf6qM3PTTooQDJvQbejgbTv/view
-Also download the train/test/val official txt file from: https://drive.google.com/file/d/0B7EVK8r0v71pY0NSMzRuSXJEVkk/view
-Create a new directory in the root directory called "datasets/real".
-In the "real" folder, create a folder called "annotations" and extract the "CelebA-HQ-to-CelebA-mapping.txt" there.
-Place the "list_eval_partition.txt" in the same "annotations" folder
-Place the "CelebA-HQ-img", which contains the 30,000 images, into the "real" directory 
+* The CelebA-HQ dataset can be found at: https://drive.google.com/file/d/1badu11NqxGf6qM3PTTooQDJvQbejgbTv/view
+* Also download the train/test/val official txt file from: https://drive.google.com/file/d/0B7EVK8r0v71pY0NSMzRuSXJEVkk/view
+* Create a new directory in the root directory called "datasets/real".
+* In the "real" folder, create a folder called "annotations" and extract the "CelebA-HQ-to-CelebA-mapping.txt" there.
+* Place the "list_eval_partition.txt" in the same "annotations" folder
+* Place the "CelebA-HQ-img", which contains the 30,000 images, into the "real" directory 
+
 The Directory should look like this:
 ```
 datasets/real
