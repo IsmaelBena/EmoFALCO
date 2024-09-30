@@ -56,3 +56,21 @@ python resize_images.py
 python extract_features.py
 ```
 ### Generate fake dataset
+```
+python generate_fake_data.py
+```
+### Use Nearest Neighbour model to find closest real and fake images
+```
+python pair_nn.py
+```
+### Save inverted latent code of real images
+```
+python invert.py
+```
+### Create the final anonymized images
+```
+python anonymize.py
+```
+### Other
+* In case you wish to change the directories or experiment with differing parameters, make modifications to the config.yaml file.
+* Call methods definded within "lib/evaluation.py" using the "evaluation.ipynb" notebook toe valuate the outputs.
