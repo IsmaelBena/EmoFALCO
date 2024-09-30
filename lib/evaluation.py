@@ -38,23 +38,31 @@ def compare_images(real_images_dir, anon_dir, show_top_x, show_bottom_x):
     
     fig_size_multi = 4
     
-    fig, axs = plt.subplots(num_rows, 2, figsize=(fig_size_multi * 2, fig_size_multi * num_rows))
+    fig, axs = plt.subplots(num_rows, 2, figsize=(fig_size_multi * 2, fig_size_multi * num_rows), gridspec_kw={'wspace': 0, 'hspace': 0})
     
     for row_index, image in enumerate(images_to_display):
         real_image = Image.open(osp.join(real_images_dir, f"{image['image_name']}.jpg"))
         anon_image = Image.open(osp.join(anon_dir, 'data', f"{image['image_name']}.jpg"))
+        
         ax = axs[row_index][0]
         ax.imshow(real_image)
         ax.axis('off')
         title_text = f"top: {row_index+1}" if row_index < show_top_x else f"bottom {row_index+1 - show_top_x}"
-        ax.set_title(f"real image ranked {title_text}")
+        ax.text(0.5, 0.05, f"Image Ranked {title_text}", fontsize=12, color='white', 
+            ha='center', va='bottom', transform=ax.transAxes, bbox=dict(facecolor='black', alpha=0.5, boxstyle='round,pad=0.5'))
         
         ax = axs[row_index][1]
         ax.imshow(anon_image)
         ax.axis('off')
-        ax.set_title(f"fake image loss: {image['loss']}")
+        ax.text(0.5, 0.05, f"Image Loss: {image['loss']}", fontsize=12, color='white',
+            ha='center', va='bottom', transform=ax.transAxes, bbox=dict(facecolor='black', alpha=0.5, boxstyle='round,pad=0.5'))
     
-    plt.tight_layout()
+    fig.text(0.25, 1, 'Real Images', ha='center', va='center', fontsize=16, color='white', bbox=dict(facecolor='black', alpha=0.5, boxstyle='round,pad=0.5'))
+    fig.text(0.75, 1, 'Anonymized Images', ha='center', va='center', fontsize=16, color='white', bbox=dict(facecolor='black', alpha=0.5, boxstyle='round,pad=0.5'))
+    
+    plt.subplots_adjust(left=0, right=1, top=1, bottom=0, wspace=0, hspace=0)
+    
+    plt.tight_layout(pad=0)
     plt.show()
         
         

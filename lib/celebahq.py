@@ -26,7 +26,7 @@ class CelebAHQ(data.Dataset):
 
         """
         self.root_dir = root_dir
-        self.data_dir = osp.join(self.root_dir, 'data_full')
+        self.data_dir = osp.join(self.root_dir, 'CelebA-HQ-img')
         self.anno_dir = osp.join(self.root_dir, 'annotations')
         valid_faces_file = osp.join(self.root_dir, 'landmarks', 'image_filenames.txt')
         with open(valid_faces_file) as f:
