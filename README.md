@@ -74,3 +74,6 @@ python anonymize.py
 ### Other
 * In case you wish to change the directories or experiment with differing parameters, make modifications to the config.yaml file.
 * Call methods definded within "lib/evaluation.py" using the "evaluation.ipynb" notebook toe valuate the outputs.
+
+## Disclaimer
+This project was built as part of my dissertation submission for my MSc in Artificial Intelligence. This work is modification and based on the work researched and developed at https://github.com/chi0tzp/FALCO .
