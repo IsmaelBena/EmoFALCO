@@ -3,9 +3,9 @@ paths:
   fake_dataset_root_dir: "datasets/fake"
   facial_landmarks_dir: "landmarks"
   arcface_dir: "arcface_features"
-  full_images_dir: "CelebA-HQ-img"
+  full_images_dir: "data_full"
   inverted_dir: "inv"
-  anonymized_dir: "datasets/anon_backup/compare_lr"
+  anonymized_dir: "datasets/anon_backup/compare_all"
   fake_nn_map: "landmarks_brute_cosine_nn_map.json"
 
 resize_settings:

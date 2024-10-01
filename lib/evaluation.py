@@ -24,15 +24,20 @@ def extract_ordered_anon_image_names(eval_dict, sort_by='combined'):
             
     return sorted_images
 
-def compare_images(real_images_dir, anon_dir, show_top_x, show_bottom_x):
+def compare_images(real_images_dir, anon_dir, show_top_x, show_bottom_x, save=True):
     
     with open(osp.join(anon_dir, 'eval.json'), 'r') as file:
         eval_dict = json.load(file)
     
     sorted_images = extract_ordered_anon_image_names(eval_dict)
-    top_x_images = np.array(sorted_images[:show_top_x])
-    bottom_x_images = np.flip(np.array(sorted_images[-show_bottom_x:]))
-    images_to_display = np.concatenate((top_x_images, bottom_x_images))
+    if show_top_x > 0 :
+        top_x_images = np.array(sorted_images[:show_top_x])
+        images_to_display = top_x_images
+    if show_bottom_x > 0:
+        bottom_x_images = np.flip(np.array(sorted_images[-show_bottom_x:]))
+        images_to_display = bottom_x_images
+    if show_bottom_x > 0 and show_top_x > 0:
+        images_to_display = np.concatenate((top_x_images, bottom_x_images))
     
     num_rows = show_top_x + show_bottom_x
     
@@ -63,6 +68,8 @@ def compare_images(real_images_dir, anon_dir, show_top_x, show_bottom_x):
     plt.subplots_adjust(left=0, right=1, top=1, bottom=0, wspace=0, hspace=0)
     
     plt.tight_layout(pad=0)
+    if save:
+        plt.savefig(f"{anon_dir}_top_{show_top_x}_bottom_{show_bottom_x}.png", bbox_inches='tight', dpi=300)
     plt.show()
         
         

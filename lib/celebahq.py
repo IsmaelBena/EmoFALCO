@@ -6,6 +6,11 @@ from torchvision import transforms
 from torch.utils import data
 from PIL import Image
 
+"""
+Original file from: https://github.com/chi0tzp/FALCO,
+Minor modifications made for the EmoFalco Dissertation project.
+"""
+
 class CelebAHQ(data.Dataset):
     def __init__(self, root_dir,
                  subset='train',

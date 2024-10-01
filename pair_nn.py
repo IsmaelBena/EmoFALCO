@@ -6,6 +6,11 @@ import json
 import yaml
 from lib import DATASETS
 
+"""
+Original file from: https://github.com/chi0tzp/FALCO,
+Major modifications made for the EmoFalco Dissertation project.
+"""
+
 def main():
     # Load Config
     with open('config.yaml', 'r') as file:

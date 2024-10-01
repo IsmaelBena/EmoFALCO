@@ -8,6 +8,11 @@ from lib import DATASETS, CelebAHQ, ArcFace
 from tqdm import tqdm
 import face_alignment
 
+"""
+Original file from: https://github.com/chi0tzp/FALCO,
+Major modifications made for the EmoFalco Dissertation project.
+"""
+
 def main():
     # Load Config
     with open('config.yaml', 'r') as file:

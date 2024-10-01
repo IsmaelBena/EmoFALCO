@@ -11,6 +11,11 @@ from models.load_generator import load_generator
 import face_alignment
 import cv2
 
+"""
+Original file from: https://github.com/chi0tzp/FALCO,
+Major modifications made for the EmoFalco Dissertation project.
+"""
+
 def main():
     # Load Config
     with open('config.yaml', 'r') as file:
