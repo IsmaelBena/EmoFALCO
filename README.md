@@ -4,7 +4,7 @@ This project aims to provide a model that can transform a dataset of human faces
 
 ## Example
 
-![d081ea83-0a5f-4ba3-be71-30152e6d9726](https://github.com/user-attachments/assets/23e3e818-3d91-41b8-9ca1-918834fddfbe)
+[d081ea83-0a5f-4ba3-be71-30152e6d9726](https://github.com/user-attachments/assets/23e3e818-3d91-41b8-9ca1-918834fddfbe)
 
 ## Installation
 This project was developed on linux, there is no guarantee it will run as intended on other operating systems.
