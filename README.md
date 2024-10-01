@@ -1,6 +1,6 @@
 # Expression or Emotion - Preserving Face Dataset Anonymization via Latent Code Optimization.
 
-This project aims to provide a model that can transform a dataset of human faces into an anonymized version of that datasset while maintaining the same facial expression.
+This project aims to provide a model that can transform a dataset of human faces into an anonymized version of that dataset while maintaining the same facial expression.
 
 ## Example
 
